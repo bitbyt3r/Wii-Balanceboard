@@ -1,0 +1,21 @@
+CALIBRATION_ADDR = b'\x04\xA4\x00\x24'
+CALIBRATION_LENGTH = 24
+
+ENCRYPTION_ADDR = b'\x04\xA4\x00\x40'
+ENCRYPTION_DISABLE = b''
+
+REPORT_CB = b'\x30'
+REPORT_CB8E = b'\x32'
+
+LIGHT = b'\x11'
+SET_REPORT_MODE = b'\x12'
+WRITE = b'\x16'
+READ = b'\x17'
+
+INPUT = b'\xA1'
+OUTPUT = b'\xA2'
+
+STATUS = b'\x20'
+READ_RTN = b'\x21'
+ACK = b'\x22'
+

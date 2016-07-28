@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Balloon Mass</title>
+</head>
+<body>
+<script type="text/javascript">
+var ws = new WebSocket("ws://192.168.128.1:8080");
+ws.onmessage = function(event) {
+  var data = JSON.parse(event.data);
+  document.getElementById("total").innerHTML = data.total;
+  document.getElementById("boards").innerHTML = "";
+  var text = "<table border='1'><tr><th>Board</th><th width='200px'>Mass (Kg)</th></tr>";
+  data.boards.forEach(function(board) {
+    text += "<tr><td>" + board.addr + "</td><td>" + board.mass + "</td></tr>";
+  });
+  text += "</table>";
+  document.getElementById("boards").innerHTML = text;
+}
+</script>
+Total (Kg):
+<div id="total"></div>
+Individual:
+<div id="boards"></div>
+</body>
+</html>
